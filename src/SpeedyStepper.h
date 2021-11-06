@@ -9,19 +9,19 @@
 
 
 // MIT License
-// 
+//
 // Copyright (c) 2014 Stanley Reifel & Co.
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is furnished
 // to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -49,7 +49,7 @@ class SpeedyStepper
     //
     SpeedyStepper();
     void connectToPins(byte stepPinNumber, byte directionPinNumber);
-    
+
     void setStepsPerMillimeter(float motorStepPerMillimeter);
     float getCurrentPositionInMillimeters();
     void setCurrentPositionInMillimeters(float currentPositionInMillimeter);
@@ -61,7 +61,7 @@ class SpeedyStepper
     void moveToPositionInMillimeters(float absolutePositionToMoveToInMillimeters);
     void setupMoveInMillimeters(float absolutePositionToMoveToInMillimeters);
     float getCurrentVelocityInMillimetersPerSecond();
-    
+
 
     void setStepsPerRevolution(float motorStepPerRevolution);
     float getCurrentPositionInRevolutions();
@@ -80,6 +80,7 @@ class SpeedyStepper
     void setCurrentPositionInSteps(long currentPositionInSteps);
     long getCurrentPositionInSteps();
     void setupStop();
+    void emergencyStop();
     void setSpeedInStepsPerSecond(float speedInStepsPerSecond);
     void setAccelerationInStepsPerSecondPerSecond(float accelerationInStepsPerSecondPerSecond);
     bool moveToHomeInSteps(long directionTowardHome, float speedInStepsPerSecond, long maxDistanceToMoveInSteps, int homeSwitchPin);
@@ -88,7 +89,7 @@ class SpeedyStepper
     void moveToPositionInSteps(long absolutePositionToMoveToInSteps);
     void setupMoveInSteps(long absolutePositionToMoveToInSteps);
     bool motionComplete();
-    float getCurrentVelocityInStepsPerSecond(); 
+    float getCurrentVelocityInStepsPerSecond();
     bool processMovement(void);
 
 
@@ -117,4 +118,3 @@ class SpeedyStepper
 
 // ------------------------------------ End ---------------------------------
 #endif
-
