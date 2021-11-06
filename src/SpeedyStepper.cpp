@@ -634,7 +634,7 @@ void SpeedyStepper::setupStop()
 }
 
 
-void SpeedeyStepper::emergencyStop()
+void SpeedyStepper::emergencyStop()
 {
   targetPosition_InSteps = currentPosition_InSteps;
   currentStepPeriod_InUS = 0.0;
@@ -669,7 +669,7 @@ void SpeedyStepper::setAccelerationInStepsPerSecondPerSecond(
 
 
 //
-// home the motor by moving until the homing sensor is activated, then set the 
+// home the motor by moving until the homing sensor is activated, then set the
 // position to zero with units in steps
 //  Enter:  directionTowardHome = 1 to move in a positive direction, -1 to move in
 //             a negative directions
@@ -1054,6 +1054,19 @@ bool SpeedyStepper::motionComplete()
     return(true);
   else
     return(false);
+}
+
+int SpeedyStepper::motionDirection()
+{
+  if (currentPosition_InSteps < targetPosition_InSteps)
+    return(1);
+  else
+  {
+    if (currentPosition_InSteps > targetPosition_InSteps)
+      return(-1);
+    else
+      return(0);
+  }
 }
 
 // -------------------------------------- End --------------------------------------

@@ -91,6 +91,7 @@ class SpeedyStepper
     bool motionComplete();
     float getCurrentVelocityInStepsPerSecond();
     bool processMovement(void);
+    int motionDirection(void);
 
 
   private:
